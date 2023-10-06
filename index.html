@@ -9,10 +9,7 @@
 <meta name="keywords" content="">
 <meta name="author" content="Codescandy">
 
-<script>
-    // Render blocking JS:
-    if (localStorage.theme) document.documentElement.setAttribute("data-theme", localStorage.theme);
-    </script>
+
 
 <!-- Favicon icon-->
 <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico">
@@ -24,6 +21,23 @@
 
 
 <!-- Theme CSS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Render blocking JS:
+  $(document).ready(function() {
+      // Sélectionnez tous les éléments de menu (liens) dans la barre de navigation
+      var menuItems = $(".navbar-nav a");
+
+      // Ajoutez un gestionnaire d'événement clic à chaque élément de menu
+      menuItems.click(function() {
+          // Vérifiez si la barre de navigation est en mode "collapse" (mobile)
+          if ($(".navbar-toggler").is(":visible")) {
+              // Si oui, fermez la barre de navigation en cliquant sur le bouton hamburger
+              $(".navbar-toggler").click();
+          }
+      });
+  });
+  </script>
 <link rel="stylesheet" href="./assets/css/theme.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdi/css/materialdesignicons.min.css">
   <link rel="canonical" href="landing-sass.html">
@@ -226,7 +240,7 @@
       </div>
     </section>
     <!-- image section -->
-    <section class="pb-lg-16 pb-8" id="fonctionnalités">
+    <section class="pb-lg-16 pb-8"style=" padding-top: 6rem!important;" id="fonctionnalités">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 col-12">
